@@ -105,20 +105,32 @@ class PendingOverview extends BaseWidget
                 ->description('Total Pending Documents')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart([$pendingCount, 0, 0, 0, 0, 0]) // Chart showing only pending count for simplicity
-                ->color('warning'),
+                ->color('warning')
+                ->extraAttributes([
+                    'class' => 'cursor-pointer',
+                    'wire:click' => "window.location.href = '".route('PendingDocuments')."'"
+                ]),
                 
         
             Stat::make('Approved Documents', $approvedCount)
                 ->description('Total Approved Documents')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart([$approvedCount, 0, 0, 0, 0, 0]) // Chart showing only approved count for simplicity
-                ->color('success'),
+                ->color('success')
+                ->extraAttributes([
+                    'class' => 'cursor-pointer',
+                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })"
+                ]),
         
             Stat::make('Rejected Documents', $rejectedCount)
                 ->description('Total Rejected Documents')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart([$rejectedCount, 0, 0, 0, 0, 0]) // Chart showing only reject count for simplicity
-                ->color('danger'),
+                ->color('danger')
+                ->extraAttributes([
+                    'class' => 'cursor-pointer',
+                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })"
+                ]),
                 
             Stat::make('Revised Documents', $revisedCount)
                 ->description('Total Revised Documents')
