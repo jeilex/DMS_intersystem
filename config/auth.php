@@ -70,14 +70,15 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-    ],
-    'permissions' => [
-        'web' => [
-            'View Sales Documents',
-            'Create Sales Documents',
-            'Update Sales Documents',
-            'Delete Sales Documents',
-            'CRUD Sales Documents',
+
+        'permissions' => [
+            'web' => [
+                'View Sales Documents',
+                'Create Sales Documents',
+                'Update Sales Documents',
+                'Delete Sales Documents',
+                'CRUD Sales Documents',
+            ],
         ],
     ],
 
