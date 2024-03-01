@@ -23,6 +23,7 @@ class DepartmentChart extends ChartWidget
             'rejected' => [],
             'approved' => [],
             'pending' => [],
+            'revised' => [],
         ];
 
         $labels = [];
@@ -40,10 +41,12 @@ class DepartmentChart extends ChartWidget
             $rejected = $model::where('status', 'reject')->count();
             $approved = $model::where('status', 'approved')->count();
             $pending = $model::where('status', 'pending')->count();
+            $revised = $model::where('status', 'revised')->count();
 
             $chartData['rejected'][$department] = $rejected;
             $chartData['approved'][$department] = $approved;
             $chartData['pending'][$department] = $pending;
+            $chartData['revised'][$department] = $revised;
 
             $labels[] = $department;
         }
@@ -51,11 +54,11 @@ class DepartmentChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Rejected',
-                    'data' => $chartData['rejected'],
-                    'backgroundColor' => 'Red',
-                    'borderColor' => 'Red',
+                    'label' => 'Pending',
+                    'data' => $chartData['pending'],
+                    'backgroundColor' => 'Default',
                 ],
+                
                 [
                     'label' => 'Approved',
                     'data' => $chartData['approved'],
@@ -63,11 +66,19 @@ class DepartmentChart extends ChartWidget
                     'borderColor' => 'Green',
                 ],
                 [
-                    'label' => 'Pending',
-                    'data' => $chartData['pending'],
-                    'backgroundColor' => 'default',
+                    'label' => 'Rejected',
+                    'data' => $chartData['rejected'],
+                    'backgroundColor' => 'Red',
+                    'borderColor' => 'Red',
+                ],
+                [
+                    'label' => 'Revised',
+                    'data' => $chartData['revised'],
+                    'backgroundColor' => 'Zinc',
+                    'borderColor' => 'Zinc',
                 ],
             ],
+            
             'labels' => $labels,
         ];
     }
