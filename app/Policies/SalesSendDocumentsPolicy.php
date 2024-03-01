@@ -2,91 +2,79 @@
 
 namespace App\Policies;
 
-
+use Illuminate\Auth\Access\Response;
 use App\Models\SalesSendDocuments;
 use App\Models\User;
-use Spatie\Permission\Models\Permission;
 
 class SalesSendDocumentsPolicy
 {
     /**
      * Determine whether the user can view any models.
-     *
-     * @param  \App\Models\User  $user
-     * @return bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
-        return $user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin');
+        if ($user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+            return true;
+        }
+        return false;
     }
 
     /**
      * Determine whether the user can view the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\SalesSendDocuments  $salesSendDocuments
-     * @return bool
      */
-    public function view(User $user, SalesSendDocuments $salesSendDocuments)
+    public function view(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        return $user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin');
+        if ($user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+            return true;
+        }
+        return false;
     }
 
     /**
      * Determine whether the user can create models.
-     *
-     * @param  \App\Models\User  $user
-     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
-        return $user->hasPermissionTo('Create Sales Send Documents') || $user->hasAnyRole('Admin');
+        if ($user->hasPermissionTo('Create Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+            return true;
+        }
+        return false;
     }
 
     /**
      * Determine whether the user can update the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\SalesSendDocuments  $salesSendDocuments
-     * @return bool
      */
-    public function update(User $user, SalesSendDocuments $salesSendDocuments)
+    public function update(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        return $user->hasPermissionTo('Update Sales Send Documents') || $user->hasAnyRole('Admin');
+        if ($user->hasPermissionTo('Update Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+            return true;
+        }
+        return false;
     }
 
     /**
      * Determine whether the user can delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\SalesSendDocuments  $salesSendDocuments
-     * @return bool
      */
-    public function delete(User $user, SalesSendDocuments $salesSendDocuments)
+    public function delete(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        return $user->hasPermissionTo('Delete Sales Send Documents') || $user->hasAnyRole('Admin');
+        if ($user->hasPermissionTo('Delete Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+            return true;
+        }
+        return false;
     }
 
     /**
      * Determine whether the user can restore the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\SalesSendDocuments  $salesSendDocuments
-     * @return bool
      */
-    public function restore(User $user, SalesSendDocuments $salesSendDocuments)
+    public function restore(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
         return $user->hasAnyRole('Admin');
     }
 
     /**
      * Determine whether the user can permanently delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\SalesSendDocuments  $salesSendDocuments
-     * @return bool
      */
-    public function forceDelete(User $user, SalesSendDocuments $salesSendDocuments)
+    public function forceDelete(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
         return $user->hasAnyRole('Admin');
     }
