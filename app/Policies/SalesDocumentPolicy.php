@@ -13,7 +13,7 @@ class SalesDocumentPolicy
      */
     public function viewAny(User $user): bool
     {
-        if ($user->hasPermissionTo('View Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
+        if ($user->hasPermissionTo('View Sales Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Document')) {
             return true;
         }
         return false;
@@ -24,7 +24,7 @@ class SalesDocumentPolicy
      */
     public function view(User $user, SalesDocument $sendDocuments): bool
     {
-        if ($user->hasPermissionTo('View Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
+        if ($user->hasPermissionTo('View Sales Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Document')) {
             return true;
         }
         return false;
@@ -35,7 +35,7 @@ class SalesDocumentPolicy
      */
     public function create(User $user): bool
     {
-         if ($user->hasPermissionTo('View Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
+         if ($user->hasPermissionTo('View Sales Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Document')) {
             return true;
         }
         return false;
@@ -46,7 +46,7 @@ class SalesDocumentPolicy
      */
     public function update(User $user, SalesDocument $sendDocuments): bool
     {
-         if ($user->hasPermissionTo('Update Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
+         if ($user->hasPermissionTo('Update Sales Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Document')) {
             return true;
         }
         return false;
@@ -57,7 +57,7 @@ class SalesDocumentPolicy
      */
     public function delete(User $user, SalesDocument $salesDocument): bool
     {
-         if ($user->hasPermissionTo('Delete Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
+         if ($user->hasPermissionTo('Delete Sales Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Document')) {
             return true;
         }
         return false;

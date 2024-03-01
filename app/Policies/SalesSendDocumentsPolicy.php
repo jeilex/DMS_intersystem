@@ -13,7 +13,7 @@ class SalesSendDocumentsPolicy
      */
     public function viewAny(User $user): bool
     {
-        if ($user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+        if ($user->hasPermissionTo('View Sales Send Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Document')) {
             return true;
         }
         return false;
@@ -24,7 +24,7 @@ class SalesSendDocumentsPolicy
      */
     public function view(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        if ($user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+        if ($user->hasPermissionTo('View Sales Send Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Document')) {
             return true;
         }
         return false;
@@ -35,7 +35,7 @@ class SalesSendDocumentsPolicy
      */
     public function create(User $user): bool
     {
-        if ($user->hasPermissionTo('Create Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+        if ($user->hasPermissionTo('Create Sales Send Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Document')) {
             return true;
         }
         return false;
@@ -46,7 +46,7 @@ class SalesSendDocumentsPolicy
      */
     public function update(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        if ($user->hasPermissionTo('Update Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+        if ($user->hasPermissionTo('Update Sales Send Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Document')) {
             return true;
         }
         return false;
@@ -57,7 +57,7 @@ class SalesSendDocumentsPolicy
      */
     public function delete(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        if ($user->hasPermissionTo('Delete Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
+        if ($user->hasPermissionTo('Delete Sales Send Document') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Document')) {
             return true;
         }
         return false;
@@ -66,7 +66,7 @@ class SalesSendDocumentsPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, SalesSendDocuments $salesSendDocuments): bool
+    public function restore(User $user, SalesSendDocument $salesSendDocument): bool
     {
         return $user->hasAnyRole('Admin');
     }
@@ -74,7 +74,7 @@ class SalesSendDocumentsPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, SalesSendDocuments $salesSendDocuments): bool
+    public function forceDelete(User $user, SalesSendDocument $salesSendDocument): bool
     {
         return $user->hasAnyRole('Admin');
     }
