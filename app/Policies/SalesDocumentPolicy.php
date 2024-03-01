@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\Response;
-use App\Models\SalesDocuments;
+use App\Models\SalesDocument;
 use App\Models\User;
 
-class SalesDocumentsPolicy
+class SalesDocumentPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -22,7 +22,7 @@ class SalesDocumentsPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, SalesDocuments $sendDocuments): bool
+    public function view(User $user, SalesDocument $sendDocuments): bool
     {
         if ($user->hasPermissionTo('View Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
             return true;
@@ -44,7 +44,7 @@ class SalesDocumentsPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, SalesDocuments $sendDocuments): bool
+    public function update(User $user, SalesDocument $sendDocuments): bool
     {
          if ($user->hasPermissionTo('Update Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
             return true;
@@ -55,7 +55,7 @@ class SalesDocumentsPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, SalesDocuments $salesDocuments): bool
+    public function delete(User $user, SalesDocument $salesDocument): bool
     {
          if ($user->hasPermissionTo('Delete Sales Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Documents')) {
             return true;
@@ -66,7 +66,7 @@ class SalesDocumentsPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, SalesDocuments $salesDocuments): bool
+    public function restore(User $user, SalesDocument $salesDocument): bool
     {
         return $user->hasAnyRole('Admin');
     }
@@ -74,7 +74,7 @@ class SalesDocumentsPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, SalesDocuments $salesDocuments): bool
+    public function forceDelete(User $user, SalesDocument $salesDocument): bool
     {
         return $user->hasAnyRole('Admin');
     }
