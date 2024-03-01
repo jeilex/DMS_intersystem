@@ -32,10 +32,10 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->unsavedChangesAlerts()
-            ->brandLogo(asset('images/NU.png')) 
+            ->brandLogo(asset('images/intersys.png')) 
             // ->brandName('Document Management System')
             // ->font('Arial')
-            ->favicon(asset('images/NU.png'))
+            ->favicon(asset('images/intersys.png'))
             ->brandLogoHeight('50px')
             ->colors([
                 'primary' => Color::Amber,
