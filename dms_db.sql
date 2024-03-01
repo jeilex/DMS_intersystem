@@ -983,7 +983,8 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 (72, 'Create Purchasing Send Documents', 'web', '2024-02-01 01:52:47', '2024-02-01 01:52:47'),
 (73, 'Update Purchasing Send Documents', 'web', '2024-02-01 01:52:47', '2024-02-01 01:52:47'),
 (74, 'Delete Purchasing Send Documents', 'web', '2024-02-01 01:52:47', '2024-02-01 01:52:47'),
-(75, 'CRUD Purchasing Send Documents', 'web', '2024-02-01 01:52:47', '2024-02-01 01:52:47');
+(75, 'CRUD Purchasing Send Documents', 'web', '2024-02-01 01:52:47', '2024-02-01 01:52:47'),
+(76, 'View Sales Send Documents', 'web', '2024-02-01 01:52:47', '2024-02-01 01:52:47');
 
 -- --------------------------------------------------------
 
