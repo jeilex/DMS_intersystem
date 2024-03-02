@@ -39,6 +39,7 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'table' => 'permissions',
         ],
     ],
 
@@ -70,14 +71,15 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-    ],
-    'permissions' => [
-        'web' => [
-            'View Sales Documents',
-            'Create Sales Documents',
-            'Update Sales Documents',
-            'Delete Sales Documents',
-            'CRUD Sales Documents',
+
+        'permissions' => [
+            'web' => [
+                'View Sales Send Documents',
+                'Create Sales Send Documents',
+                'Update Sales Send Documents',
+                'Delete Sales Send Documents',
+                'CRUD Sales Send Documents',
+            ],
         ],
     ],
 
