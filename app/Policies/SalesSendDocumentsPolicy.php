@@ -13,10 +13,7 @@ class SalesSendDocumentsPolicy
      */
     public function viewAny(User $user): bool
     {
-        if ($user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
-            return true;
-        }
-        return false;
+        return $user->hasAnyRole('Admin');
     }
 
     /**
@@ -24,10 +21,7 @@ class SalesSendDocumentsPolicy
      */
     public function view(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        if ($user->hasPermissionTo('View Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
-            return true;
-        }
-        return false;
+        return $user->hasAnyRole('Admin');
     }
 
     /**
@@ -35,21 +29,14 @@ class SalesSendDocumentsPolicy
      */
     public function create(User $user): bool
     {
-        if ($user->hasPermissionTo('Create Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
-            return true;
-        }
-        return false;
+        return $user->hasAnyRole('Admin');
     }
 
     /**
      * Determine whether the user can update the model.
      */
     public function update(User $user, SalesSendDocuments $salesSendDocuments): bool
-    {
-        if ($user->hasPermissionTo('Update Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
-            return true;
-        }
-        return false;
+    { return $user->hasAnyRole('Admin');
     }
 
     /**
@@ -57,10 +44,7 @@ class SalesSendDocumentsPolicy
      */
     public function delete(User $user, SalesSendDocuments $salesSendDocuments): bool
     {
-        if ($user->hasPermissionTo('Delete Sales Send Documents') || $user->hasAnyRole('Admin') || $user->hasPermissionTo('CRUD Sales Send Documents')) {
-            return true;
-        }
-        return false;
+        return $user->hasAnyRole('Admin');
     }
 
     /**

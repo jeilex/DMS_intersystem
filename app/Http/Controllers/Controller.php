@@ -11,6 +11,6 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     public function home(){
-        return view('auth.')
+        return view('auth.');
     }
 }
