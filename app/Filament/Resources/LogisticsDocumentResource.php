@@ -20,7 +20,7 @@ use App\Filament\Resources\LogisticsDocumentResource\RelationManagers;
 class LogisticsDocumentResource extends Resource
 {
     protected static ?string $model = LogisticsDocument::class;
-
+    protected static ?int $navigationSort = 6;
     protected static ?string $navigationLabel = 'Logistics';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'View Document Status';

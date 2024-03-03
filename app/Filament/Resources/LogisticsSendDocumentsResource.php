@@ -20,6 +20,7 @@ use App\Filament\Resources\LogisticsSendDocumentsResource\RelationManagers;
 class LogisticsSendDocumentsResource extends Resource
 {
     protected static ?string $model = LogisticsSendDocuments::class;
+    protected static ?int $navigationSort = 6;
     protected static ?string $navigationLabel = 'Logistics';
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
     protected static ?string $navigationGroup = 'Department Message';

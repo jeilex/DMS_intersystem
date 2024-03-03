@@ -19,6 +19,7 @@ use App\Filament\Resources\AccountingDocumentResource\RelationManagers;
 
 class AccountingDocumentResource extends Resource
 {
+    protected static ?int $navigationSort = 5;
     protected static ?string $model = AccountingDocument::class;
     protected static ?string $navigationLabel = 'Accounting';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

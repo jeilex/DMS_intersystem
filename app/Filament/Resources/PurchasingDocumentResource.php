@@ -20,7 +20,7 @@ use App\Filament\Resources\PurchasingDocumentResource\RelationManagers;
 class PurchasingDocumentResource extends Resource
 {
     protected static ?string $model = PurchasingDocument::class;
-
+    protected static ?int $navigationSort = 4;
     protected static ?string $navigationLabel = 'Purchasing';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'View Document Status';

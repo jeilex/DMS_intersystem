@@ -97,7 +97,8 @@ class PendingOverview extends BaseWidget
         $approvedCount += PurchasingSendDocuments::where('status', 'approved')->count();
 
         
-        
+        $buttonHtml = '<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Click Me</button>';
+
        
 
         return [
@@ -108,8 +109,10 @@ class PendingOverview extends BaseWidget
                 ->color('warning')
                 ->extraAttributes([
                     'class' => 'cursor-pointer',
-                    'wire:click' => "window.location.href = '".route('PendingDocuments')."'"
+                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })",
+                    'onclick' => 'scrollPending()', // Call the scrollPageDown function
                 ]),
+    
                 
         
             Stat::make('Approved Documents', $approvedCount)
@@ -118,8 +121,9 @@ class PendingOverview extends BaseWidget
                 ->chart([$approvedCount, 0, 0, 0, 0, 0]) // Chart showing only approved count for simplicity
                 ->color('success')
                 ->extraAttributes([
-                    'class' => 'cursor-pointer',
-                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })"
+                   'class' => 'cursor-pointer',
+                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })",
+                    'onclick' => 'scrollApproved()', // Call the scrollPageDown function
                 ]),
         
             Stat::make('Rejected Documents', $rejectedCount)
@@ -128,15 +132,22 @@ class PendingOverview extends BaseWidget
                 ->chart([$rejectedCount, 0, 0, 0, 0, 0]) // Chart showing only reject count for simplicity
                 ->color('danger')
                 ->extraAttributes([
-                    'class' => 'cursor-pointer',
-                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })"
+                   'class' => 'cursor-pointer',
+                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })",
+                    'onclick' => 'scrollRejected()', // Call the scrollPageDown function
                 ]),
                 
             Stat::make('Revised Documents', $revisedCount)
                 ->description('Total Revised Documents')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart([$revisedCount, 0, 0, 0, 0, 0]) // Chart showing only revised count for simplicity
-                ->color('gray '),
+                ->color('gray ')
+                ->extraAttributes([
+                    'class' => 'cursor-pointer',
+                     'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })",
+                     'onclick' => 'scrollRevised()', // Call the scrollPageDown function
+                 ]),
+                
         ];
     }
 }

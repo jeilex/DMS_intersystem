@@ -22,7 +22,7 @@ use App\Filament\Resources\SalesSendDocumentsResource\RelationManagers;
 class SalesSendDocumentsResource extends Resource
 {
     protected static ?string $model = SalesSendDocuments::class;
-
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationLabel = 'Sales';
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
     protected static ?string $navigationGroup = 'Department Message';

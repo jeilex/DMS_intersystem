@@ -20,6 +20,7 @@ use App\Filament\Resources\EngineeringSendDocumentsResource\RelationManagers;
 class EngineeringSendDocumentsResource extends Resource
 {
     protected static ?string $model = EngineeringSendDocuments::class;
+    protected static ?int $navigationSort = 1;
     protected static ?string $navigationLabel = 'Engineering';
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
     protected static ?string $navigationGroup = 'Department Message';

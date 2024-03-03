@@ -20,6 +20,7 @@ use App\Filament\Resources\EngineeringDocumentResource\RelationManagers;
 class EngineeringDocumentResource extends Resource
 {
     protected static ?string $model = EngineeringDocument::class;
+    protected static ?int $navigationSort = 1;
     protected static ?string $navigationLabel = 'Engineering';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'View Document Status';

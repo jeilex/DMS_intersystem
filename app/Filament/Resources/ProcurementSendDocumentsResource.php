@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ProcurementSendDocumentsResource extends Resource
 {
     protected static ?string $model = ProcurementSendDocuments::class;
+    protected static ?int $navigationSort = 3;
     protected static ?string $navigationLabel = 'Procurement';
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
     protected static ?string $navigationGroup = 'Department Message';

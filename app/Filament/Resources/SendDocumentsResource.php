@@ -23,8 +23,7 @@ use App\Filament\Resources\SendDocumentsResource\RelationManagers;
 class SendDocumentsResource extends Resource
 {
     protected static ?string $model = SendDocuments::class;
-
-
+    protected static ?int $navigationSort = 12;
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
     
     protected static ?string $navigationLabel = 'Department-Admin Docs';

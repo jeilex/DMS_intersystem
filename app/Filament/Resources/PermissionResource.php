@@ -20,7 +20,7 @@ use App\Filament\Resources\PermissionResource\RelationManagers;
 class PermissionResource extends Resource
 {
     protected static ?string $model = Permission::class;
-
+    protected static ?int $navigationSort = 13;
     protected static ?string $navigationIcon = 'heroicon-s-key';
     protected static ?string $navigationGroup = 'Manage';
 

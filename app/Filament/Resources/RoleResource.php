@@ -21,7 +21,7 @@ use App\Filament\Resources\RoleResource\RelationManagers;
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
-
+    protected static ?int $navigationSort = 14;
     protected static ?string $navigationIcon = 'heroicon-s-users';
     protected static ?string $navigationGroup = 'Manage';
 

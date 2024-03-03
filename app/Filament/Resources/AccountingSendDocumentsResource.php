@@ -22,7 +22,7 @@ use Filament\Forms\Components\FileUpload;
 class AccountingSendDocumentsResource extends Resource
 {
     protected static ?string $model = AccountingSendDocuments::class;
-
+    protected static ?int $navigationSort = 5;
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
     protected static ?string $navigationGroup = 'Department Message';
     protected static ?string $navigationLabel = 'Accounting';

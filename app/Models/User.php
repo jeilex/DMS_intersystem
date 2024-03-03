@@ -69,6 +69,7 @@ const ROLES = [
         'permission',
         'user_id',
         'from',
+        'upload_documents',
       
     ];
 
@@ -93,6 +94,7 @@ const ROLES = [
         'updated_at',
         'user_id',
         'from',
+        'upload_documents',
         
     ];
 
@@ -115,7 +117,7 @@ const ROLES = [
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['name', 'email', 'department']);
+        ->logOnly(['name', 'email',  'upload_documents']);
     }
 
     public function canAccessFilament(): bool
@@ -140,6 +142,8 @@ const ROLES = [
             }
         });
     }
+
+    
 
   
 }

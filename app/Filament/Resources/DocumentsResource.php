@@ -21,6 +21,7 @@ use App\Filament\Resources\DocumentsResource\RelationManagers;
 class DocumentsResource extends Resource
 {
     protected static ?string $model = Documents::class;
+    protected static ?int $navigationSort = 11;
     protected static ?string $navigationLabel = 'Admin-to-Admin Docs';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Admin';

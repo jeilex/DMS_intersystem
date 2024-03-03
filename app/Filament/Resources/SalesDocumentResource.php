@@ -20,7 +20,7 @@ use App\Filament\Resources\SalesDocumentResource\RelationManagers;
 class SalesDocumentResource extends Resource
 {
     protected static ?string $model = SalesDocument::class;
-
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationLabel = 'Sales';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'View Document Status';
