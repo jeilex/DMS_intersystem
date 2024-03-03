@@ -135,7 +135,7 @@ class SalesDocumentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSalesDocuments::route('/'),
+            'index' => Pages\ListSalesDocument::route('/'),
             'create' => Pages\CreateSalesDocument::route('/create'),
             'edit' => Pages\EditSalesDocument::route('/{record}/edit'),
         ];

@@ -6,7 +6,7 @@ use App\Filament\Resources\SalesDocumentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListSalesDocuments extends ListRecords
+class ListSalesDocument extends ListRecords
 {
     protected static string $resource = SalesDocumentResource::class;
 
