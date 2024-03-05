@@ -13,7 +13,6 @@ class ListLogisticsDocuments extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
         ];
     }
     protected function getRedirectUrl(): string

@@ -21,7 +21,7 @@ class PurchasingSendDocumentsResource extends Resource
 {
 
     protected static ?string $navigationLabel = 'Purchasing';
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 5;
     protected static ?string $model = PurchasingSendDocuments::class;
 
     protected static ?string $navigationIcon = 'heroicon-s-envelope-open';
@@ -97,7 +97,7 @@ class PurchasingSendDocumentsResource extends Resource
             Tables\Columns\TextColumn::make('published_at')
                 ->dateTime()
                 ->sortable(),
-            Tables\Columns\TextColumn::make('created_at')
+            Tables\Columns\TextColumn::make('created_on')
                 ->dateTime()
                 ->sortable(),
             Tables\Columns\TextColumn::make('updated_at')
