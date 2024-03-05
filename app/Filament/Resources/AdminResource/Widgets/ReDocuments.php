@@ -8,6 +8,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use App\Models\SendDocuments;
+use App\Models\Documents;
 use App\Models\SalesSendDocuments;
 use App\Models\LogisticsSendDocuments;
 use App\Models\AccountingSendDocuments;
@@ -32,7 +33,8 @@ class RevisedDocuments extends BaseWidget
                     ->unionAll(LogisticsSendDocuments::where('status', 'revised'))
                     ->unionAll(ProcurementSendDocuments::where('status', 'revised'))
                     ->unionAll(PurchasingSendDocuments::where('status', 'revised'))
-                    ->unionAll(AccountingSendDocuments::where('status', 'revised'));
+                    ->unionAll(AccountingSendDocuments::where('status', 'revised'))
+                    ->unionAll(Documents::where('status', 'revised'));
             })
             ->defaultSort('created_at', 'desc')
             ->columns([

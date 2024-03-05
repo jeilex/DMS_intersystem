@@ -9,6 +9,7 @@ use App\Models\LogisticsSendDocuments;
 use App\Models\ProcurementSendDocuments;
 use App\Models\PurchasingSendDocuments;
 use App\Models\SendDocuments;
+use App\Models\Documents;
 use Filament\Widgets\ChartWidget;
 
 class DepartmentChart extends ChartWidget
@@ -31,6 +32,7 @@ class DepartmentChart extends ChartWidget
         $departments = [
             'Accounting' => AccountingSendDocuments::class,
             'Sales' => SalesSendDocuments::class,
+            'Admin' => Documents::class,
             'Engineering' => EngineeringSendDocuments::class,
             'Logistics' => LogisticsSendDocuments::class,
             'Procurement' => ProcurementSendDocuments::class,
@@ -74,8 +76,8 @@ class DepartmentChart extends ChartWidget
                 [
                     'label' => 'Revised',
                     'data' => $chartData['revised'],
-                    'backgroundColor' => 'Zinc',
-                    'borderColor' => 'Zinc',
+                    'backgroundColor' => 'Gray',
+                    'borderColor' => 'Gray',
                 ],
             ],
             

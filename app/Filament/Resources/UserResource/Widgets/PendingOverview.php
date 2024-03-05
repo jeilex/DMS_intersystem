@@ -68,6 +68,11 @@ class PendingOverview extends BaseWidget
         $pendingCount += SendDocuments::where('status', 'pending')->count();
         $revisedCount += SendDocuments::where('status', 'revised')->count();
 
+        // SendDocuments
+        $rejectedCount += Documents::where('status', 'reject')->count();
+        $pendingCount += Documents::where('status', 'pending')->count();
+        $revisedCount += Documents::where('status', 'revised')->count();
+
         // AccountingDocument
    
         $approvedCount += AccountingSendDocuments::where('status', 'approved')->count();

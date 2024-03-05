@@ -52,6 +52,9 @@ class RevisedChart extends ChartWidget
         $revisedDocuments[] = SendDocuments::where('status', 'revised')
             ->orderBy('published_at')
             ->get();
+        $revisedDocuments[] = Documents::where('status', 'revised')
+            ->orderBy('published_at')
+            ->get();
 
         // Combine the results from all models
         $allRevisedDocuments = collect($revisedDocuments)->flatten();

@@ -7,6 +7,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use App\Models\SendDocuments;
+use App\Models\Documents;
 use App\Models\SalesSendDocuments;
 use App\Models\LogisticsSendDocuments;
 use App\Models\AccountingSendDocuments;
@@ -32,7 +33,8 @@ class PendingDocuments extends BaseWidget
                     ->unionAll(LogisticsSendDocuments::where('status', 'pending'))
                     ->unionAll(ProcurementSendDocuments::where('status', 'pending'))
                     ->unionAll(PurchasingSendDocuments::where('status', 'pending'))
-                    ->unionAll(AccountingSendDocuments::where('status', 'pending'));
+                    ->unionAll(AccountingSendDocuments::where('status', 'pending'))
+                    ->unionAll(Documents::where('status', 'pending'));
             })
             ->defaultSort('created_at', 'desc')
             ->columns([
